@@ -26,7 +26,8 @@ export const userFetchReducer = (state = initialState, action) => {
         case USER_FETCH_FAIL:
             return {
                 ...state,
-                error: true
+                loading: false,
+                error: true,
             };
         default:
             return state;
