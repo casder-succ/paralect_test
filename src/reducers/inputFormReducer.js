@@ -4,7 +4,7 @@ const initialState = {
     query: '',
 };
 
-export const inputForm = (state = initialState, action) => {
+export const inputFormReducer = (state = initialState, action) => {
     switch (action.type) {
         case QUERY_CHANGE:
             return {
