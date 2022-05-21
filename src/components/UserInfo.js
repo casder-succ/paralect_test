@@ -1,11 +1,17 @@
 import React from 'react';
 
-const User = ({userInfo}) => {
+const UserInfo = ({userInfo}) => {
     return (
         <div>
-            {userInfo.login}
+            <img src="" alt=""/>
+            <h2></h2>
+            <a href=""></a>
+            <img src="" alt=""/>
+            <div></div>
+            <img src="" alt=""/>
+            <div></div>
         </div>
     );
 };
 
-export default User;
+export default UserInfo;
