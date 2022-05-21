@@ -4,6 +4,9 @@ import styled from "styled-components";
 import QueryForm from "../containers/QueryForm";
 
 const HeaderWrapper = styled.header`
+  display: flex;
+  column-gap: 22px;
+  
   padding: 16px 41px;
   height: 72px;
   width: 100%;
