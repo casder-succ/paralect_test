@@ -1,5 +1,6 @@
 import {createGlobalStyle} from "styled-components";
 import Header from "./components/Header";
+import UserProfile from "./containers/UserProfile";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -9,9 +10,9 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    font-family: Inter, sans-serif,
     sans-serif;
+    font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -22,6 +23,7 @@ function App() {
         <>
             <GlobalStyle/>
             <Header/>
+            <UserProfile/>
         </>
     );
 }
