@@ -1,4 +1,4 @@
-import {USER_FETCH_FAIL, USER_FETCH_START, USER_FETCH_SUCCESS} from "../actions/userFetch";
+import {USER_FETCH_FAIL, USER_FETCH_START, USER_FETCH_SUCCESS} from "../actions/types";
 
 const initialState = {
     userInfo: {},
