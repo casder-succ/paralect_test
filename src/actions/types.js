@@ -1,4 +1,5 @@
 export const QUERY_CHANGE = 'QUERY_CHANGE';
+export const QUERY_RESET = 'QUERY_RESET';
 
 export const USER_FETCH_START = 'USER_FETCH_START';
 export const USER_FETCH_SUCCESS = 'USER_FETCH_SUCCESS';
