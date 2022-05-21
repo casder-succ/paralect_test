@@ -10,10 +10,16 @@ const InputWrapper = styled.input`
   
   height: 40px;
   width: 500px;
+  padding: 8px 0 8px 44px;
   
-  border: 0;
+  border: none;
   background: #FFFFFF;
   border-radius: 6px;
+  
+  &:focus {
+    outline: none;
+    border: none;
+  }
 `;
 
 const QueryForm = ({query, onChange, onKeyDown}) => {
