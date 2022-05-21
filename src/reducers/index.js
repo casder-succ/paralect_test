@@ -1,6 +1,8 @@
 import {combineReducers} from "redux";
-import {inputForm} from "./inputForm";
+import {inputFormReducer} from "./inputFormReducer";
+import {userFetchReducer} from "./userFetchReducer";
 
 export const rootReducer = combineReducers({
-    inputForm,
+    inputForm: inputFormReducer,
+    userFetch: userFetchReducer,
 })
