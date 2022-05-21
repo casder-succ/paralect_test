@@ -7,12 +7,17 @@ export const fetchGithubUser = (user) => (
         
         try {
             const userResponse = await fetch(constants.userUrl(user));
-            const userJson = await userResponse.json();
 
-            const reposResponse = await fetch(constants.reposUrl(user));
-            const reposJson = await reposResponse.json();
+            if (userResponse.ok) {
+                const userJson = await userResponse.json();
 
-            dispatch(userFetchSuccess(userJson, reposJson));
+                const reposResponse = await fetch(constants.reposUrl(user));
+                const reposJson = await reposResponse.json();
+
+                dispatch(userFetchSuccess(userJson, reposJson));
+            } else {
+                dispatch(userFetchFailed());
+            }
         } catch (e) {
             dispatch(userFetchFailed());
         }
