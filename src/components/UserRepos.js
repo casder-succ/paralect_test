@@ -4,6 +4,8 @@ import styled from "styled-components";
 import ReactPaginate from "react-paginate";
 import next from './next.svg';
 import previous from './previous.svg';
+import Message from "./Message";
+import {messageTypes} from "../util/messageTypes";
 
 const ReposWrapper = styled.section`
   flex: 1 1 auto;
@@ -40,6 +42,14 @@ const ReposWrapper = styled.section`
 `;
 
 const UserRepos = ({userRepos = [], quantity, onPageChange}) => {
+    if (userRepos.length === 0) {
+        return (
+            <ReposWrapper>
+                <Message type={messageTypes.EMPTY_REPOS} />
+            </ReposWrapper>
+        )
+    }
+
     return (
         <ReposWrapper>
             <h2 className="title">Repositories ({quantity})</h2>
