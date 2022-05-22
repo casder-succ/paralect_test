@@ -1,22 +1,18 @@
 import React from 'react';
 import UserInfo from "../UserInfo/UserInfo";
 import UserRepos from "../UserRepos/UserRepos";
-import styled from "styled-components";
 import Message from "../Message/Message";
 import {messageTypes} from "../../util/messageTypes";
+import {ProfileContainer} from "./styles";
 
-const ProfileContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  column-gap: 96px;
+const UserWrapper = (props) => {
+    const {
+        userInfo, userRepos,
+        userLoading, repoLoading,
+        error, handlePageChange
+    } = props;
 
-  max-width: 92%;
-  margin: 28px auto 0;
-`;
-
-const UserWrapper = ({loading, error, userInfo, userRepos, handlePageChange}) => {
-    if (loading) {
+    if (userLoading) {
         return (
             <Message type={messageTypes.LOADING}/>
         )
@@ -41,6 +37,7 @@ const UserWrapper = ({loading, error, userInfo, userRepos, handlePageChange}) =>
                 userRepos={userRepos}
                 quantity={userInfo.public_repos}
                 onPageChange={handlePageChange}
+                loading={repoLoading}
             />
         </ProfileContainer>
     );

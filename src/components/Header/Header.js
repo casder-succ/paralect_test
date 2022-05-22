@@ -1,23 +1,7 @@
 import React from 'react';
 import logo from './logo.png';
-import styled from "styled-components";
 import QueryForm from "../../containers/QueryForm";
-
-const HeaderWrapper = styled.header`
-  display: flex;
-  column-gap: 22px;
-  
-  padding: 16px 41px;
-  height: 72px;
-  width: 100%;
-  
-  background-color: #0064EB;
-  
-  img {
-    width: 40px;
-    height: 40px;
-  }
-`;
+import {HeaderWrapper} from "./styles";
 
 const Header = () => {
     return (
@@ -28,7 +12,7 @@ const Header = () => {
                 </a>
             </div>
 
-            <div>
+            <div className="input-form">
                 <QueryForm/>
             </div>
         </HeaderWrapper>
