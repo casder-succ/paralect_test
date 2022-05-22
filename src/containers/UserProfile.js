@@ -5,7 +5,8 @@ import {fetchUserRepos} from "../asyncActions/githubUser";
 const mapStateToProps = (state) => ({
     userInfo: state.userFetch.userInfo,
     userRepos: state.userRepos.userRepos,
-    loading: state.userFetch.loading,
+    userLoading: state.userFetch.loading,
+    repoLoading: state.userRepos.loading,
     error: state.userFetch.error,
 });
 
