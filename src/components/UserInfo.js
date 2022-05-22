@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
+import followersImg from './followers.svg';
+import followingImg from './following.svg';
 
 const UserWrapper = styled.section`
   .avatar,
@@ -31,9 +33,23 @@ const UserWrapper = styled.section`
   .subscriptions {
     display: flex;
     justify-content: space-between;
+    column-gap: 16px;
 
     font-size: 16px;
     line-height: 150%;
+  }
+  
+  .subscriptions > div {
+    display: flex;
+    flex: 1 1 auto;
+    align-content: flex-end;
+    align-items: center;
+    column-gap: 9px;
+  }
+  
+  .subscriptions img {
+    height: 24px;
+    width: 24px;
   }
 `;
 
@@ -55,11 +71,11 @@ const UserInfo = ({userInfo}) => {
             </div>
             <div className="subscriptions">
                 <div>
-                    <img src="" alt=""/>
+                    <img src={followersImg} alt="followers_img"/>
                     <p>{followers} followers</p>
                 </div>
                 <div>
-                    <img src="" alt=""/>
+                    <img src={followingImg} alt="following_img"/>
                     <p>{following} following</p>
                 </div>
             </div>
