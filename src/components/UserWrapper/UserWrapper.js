@@ -9,7 +9,7 @@ const UserWrapper = (props) => {
     const {
         userInfo, userRepos,
         userLoading, repoLoading,
-        error, handlePageChange
+        error, handlePageChange, currentPage
     } = props;
 
     if (userLoading) {
@@ -38,6 +38,7 @@ const UserWrapper = (props) => {
                 quantity={userInfo.public_repos}
                 onPageChange={handlePageChange}
                 loading={repoLoading}
+                page={currentPage}
             />
         </ProfileContainer>
     );

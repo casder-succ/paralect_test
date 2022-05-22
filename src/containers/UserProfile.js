@@ -7,6 +7,7 @@ const mapStateToProps = (state) => ({
     userRepos: state.userRepos.userRepos,
     userLoading: state.userFetch.loading,
     repoLoading: state.userRepos.loading,
+    currentPage: state.userRepos.currentPage,
     error: state.userFetch.error,
 });
 
