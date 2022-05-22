@@ -1,17 +1,15 @@
 import {
-    reposFetchFailed,
-    reposFetchStarted,
-    reposFetchSuccess,
     userFetchFailed,
     userFetchStarted,
     userFetchSuccess
 } from "../actions/userFetch";
 import {constants} from "../util/constants";
+import {reposFetchFailed, reposFetchStarted, reposFetchSuccess, reposSetPage} from "../actions/repos";
 
 export const fetchGithubUser = (user) => (
     async (dispatch) => {
         dispatch(userFetchStarted());
-        
+
         try {
             const userResponse = await fetch(constants.userUrl(user));
 
@@ -30,7 +28,7 @@ export const fetchGithubUser = (user) => (
 export const fetchUserRepos = (user, page) => (
     async (dispatch, getState) => {
         dispatch(reposFetchStarted());
-
+        dispatch(reposSetPage(page));
         if (!user) {
             user = getState().userFetch.userInfo.login;
         }
@@ -49,4 +47,4 @@ export const fetchUserRepos = (user, page) => (
             dispatch(reposFetchFailed());
         }
     }
-)
+);

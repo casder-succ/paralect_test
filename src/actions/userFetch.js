@@ -1,6 +1,5 @@
 import {
-    REPOS_FETCH_SUCCESS, USER_FETCH_SUCCESS, USER_FETCH_START,
-    REPOS_FETCH_START, USER_FETCH_FAIL, REPOS_FETCH_FAIL
+    USER_FETCH_SUCCESS, USER_FETCH_START, USER_FETCH_FAIL
 } from "./types";
 
 export const userFetchStarted = () => ({
@@ -16,19 +15,4 @@ export const userFetchSuccess = (userInfo) => ({
 
 export const userFetchFailed = () => ({
     type: USER_FETCH_FAIL,
-});
-
-export const reposFetchStarted = () => ({
-    type: REPOS_FETCH_START,
-})
-
-export const reposFetchSuccess = (userRepos) => ({
-    type: REPOS_FETCH_SUCCESS,
-    payload: {
-        repos: userRepos,
-    }
-});
-
-export const reposFetchFailed = () => ({
-    type: REPOS_FETCH_FAIL,
 });
