@@ -1,4 +1,11 @@
-import {userFetchFailed, userFetchStarted, userFetchSuccess} from "../actions/userFetch";
+import {
+    reposFetchFailed,
+    reposFetchStarted,
+    reposFetchSuccess,
+    userFetchFailed,
+    userFetchStarted,
+    userFetchSuccess
+} from "../actions/userFetch";
 import {constants} from "../util/constants";
 
 export const fetchGithubUser = (user) => (
@@ -10,11 +17,7 @@ export const fetchGithubUser = (user) => (
 
             if (userResponse.ok) {
                 const userJson = await userResponse.json();
-
-                const reposResponse = await fetch(constants.reposUrl(user));
-                const reposJson = await reposResponse.json();
-
-                dispatch(userFetchSuccess(userJson, reposJson));
+                dispatch(userFetchSuccess(userJson));
             } else {
                 dispatch(userFetchFailed());
             }
@@ -23,3 +26,27 @@ export const fetchGithubUser = (user) => (
         }
     }
 );
+
+export const fetchUserRepos = (user, page) => (
+    async (dispatch, getState) => {
+        dispatch(reposFetchStarted());
+
+        if (!user) {
+            user = getState().userFetch.userInfo.login;
+        }
+
+        try {
+            const reposResponse = await fetch(constants.reposUrl(user, page));
+
+            if (reposResponse.ok) {
+                const reposJson = await reposResponse.json();
+
+                dispatch(reposFetchSuccess(reposJson));
+            } else {
+                dispatch(reposFetchFailed());
+            }
+        } catch (e) {
+            dispatch(reposFetchFailed());
+        }
+    }
+)
