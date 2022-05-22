@@ -9,7 +9,12 @@ import {ReposWrapper} from "./styles";
 
 
 
-const UserRepos = ({userRepos, quantity, onPageChange, loading}) => {
+const UserRepos = ({userRepos, quantity, onPageChange, loading, page}) => {
+    const perPage = 4;
+    const pageCount = Math.ceil(quantity / perPage);
+    const min = (+page - 1) * perPage + 1;
+    const max = page === pageCount ? quantity : min + 3;
+
     if (userRepos.length === 0) {
         return (
             <ReposWrapper>
@@ -32,19 +37,24 @@ const UserRepos = ({userRepos, quantity, onPageChange, loading}) => {
                 </div>
             }
 
-            <ReactPaginate
-                pageCount={Math.ceil(quantity / 4)}
-                nextLabel={<img src={next} alt=""/>}
-                previousLabel={<img src={previous} alt=""/>}
-                pageClassName='page-item'
-                nextClassName='page-item'
-                previousClassName='page-item'
-                breakClassName='page-item'
-                activeClassName='active'
-                containerClassName='pagination'
-                breakLabel="..."
-                onPageChange={(number) => onPageChange(number.selected + 1)}
-            />
+            <div className="pagination-info">
+                <div className="quantity-info">
+                    {min}-{max} of {quantity} items
+                </div>
+                <ReactPaginate
+                    pageCount={pageCount}
+                    nextLabel={<img src={next} alt=""/>}
+                    previousLabel={<img src={previous} alt=""/>}
+                    pageClassName='page-item'
+                    nextClassName='page-item'
+                    previousClassName='page-item'
+                    breakClassName='page-item'
+                    activeClassName='active'
+                    containerClassName='pagination'
+                    breakLabel="..."
+                    onPageChange={(number) => onPageChange(number.selected + 1)}
+                />
+            </div>
         </ReposWrapper>
     );
 };

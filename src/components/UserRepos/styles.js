@@ -12,10 +12,6 @@ export const ReposWrapper = styled.section`
     padding: 2px 6px;
     border-radius: 3px;
 
-    font-size: 14px;
-    line-height: 21px;
-    color: #808080;
-
     cursor: pointer;
   }
 
@@ -30,11 +26,20 @@ export const ReposWrapper = styled.section`
 
   .pagination {
     display: flex;
-    justify-content: flex-end;
     list-style: none;
-
+  }
+  
+  .pagination-info {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 24px;
+    
     margin-top: 26px;
     margin-bottom: 30px;
+
+    font-size: 14px;
+    line-height: 21px;
+    color: #808080; 
   }
   
   @media(max-width: 750px) {
