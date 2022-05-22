@@ -11,8 +11,13 @@ export const fetchGithubUser = (user) => (
         dispatch(userFetchStarted());
 
         try {
-            const userResponse = await fetch(urls.userUrl(user));
-
+            const userResponse = await fetch(
+                urls.userUrl(user),
+                {
+                    headers: {
+                        authorization: 'token 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'
+                    }
+                });
             if (userResponse.ok) {
                 const userJson = await userResponse.json();
                 dispatch(userFetchSuccess(userJson));
@@ -34,7 +39,11 @@ export const fetchUserRepos = (user, page) => (
         }
 
         try {
-            const reposResponse = await fetch(urls.reposUrl(user, page));
+            const reposResponse = await fetch(urls.reposUrl(user, page), {
+                headers: {
+                    authorization: 'token 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'
+                }
+            });
 
             if (reposResponse.ok) {
                 const reposJson = await reposResponse.json();
