@@ -1,5 +1,5 @@
 import React from 'react';
-import {messageTypes} from "../util/messageTypes";
+import {messageTypes} from "../../util/messageTypes";
 import styled, {keyframes} from "styled-components";
 import emptyRepos from './emptyRepos.svg';
 import startSearch from './startSearch.svg';

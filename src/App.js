@@ -1,5 +1,5 @@
 import {createGlobalStyle} from "styled-components";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import UserProfile from "./containers/UserProfile";
 
 const GlobalStyle = createGlobalStyle`

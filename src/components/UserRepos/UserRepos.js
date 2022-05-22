@@ -1,11 +1,11 @@
 import React from 'react';
-import Repository from "./Repository";
+import Repository from "./Repository/Repository";
 import styled from "styled-components";
 import ReactPaginate from "react-paginate";
 import next from './next.svg';
 import previous from './previous.svg';
-import Message from "./Message";
-import {messageTypes} from "../util/messageTypes";
+import Message from "../Message/Message";
+import {messageTypes} from "../../util/messageTypes";
 
 const ReposWrapper = styled.section`
   flex: 1 1 auto;

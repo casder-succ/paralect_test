@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import {changeInput} from "../actions/inputForm";
 import {fetchGithubUser, fetchUserRepos} from "../asyncActions/githubUser";
-import Input from "../components/Input";
+import Input from "../components/Header/Input/Input";
 
 const mapStateToProps = (state) => ({
     query: state.inputForm.query,

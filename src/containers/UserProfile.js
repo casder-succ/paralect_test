@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import UserWrapper from "../components/UserWrapper";
+import UserWrapper from "../components/UserWrapper/UserWrapper";
 import {fetchUserRepos} from "../asyncActions/githubUser";
 
 const mapStateToProps = (state) => ({

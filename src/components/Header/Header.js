@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../logo.png';
+import logo from './logo.png';
 import styled from "styled-components";
-import QueryForm from "../containers/QueryForm";
+import QueryForm from "../../containers/QueryForm";
 
 const HeaderWrapper = styled.header`
   display: flex;

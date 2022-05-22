@@ -1,9 +1,9 @@
 import React from 'react';
-import UserInfo from "./UserInfo";
-import UserRepos from "./UserRepos";
+import UserInfo from "../UserInfo/UserInfo";
+import UserRepos from "../UserRepos/UserRepos";
 import styled from "styled-components";
-import Message from "./Message";
-import {messageTypes} from "../util/messageTypes";
+import Message from "../Message/Message";
+import {messageTypes} from "../../util/messageTypes";
 
 const ProfileContainer = styled.div`
   display: flex;

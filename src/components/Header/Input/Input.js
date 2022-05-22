@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import searchIcon from "./icon-image.svg";
+import searchIcon from "./searchIcon.svg";
 
 const InputWrapper = styled.input`
   position: relative;
