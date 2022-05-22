@@ -1,8 +1,10 @@
 import React from 'react';
 import Repository from "./Repository/Repository";
 import ReactPaginate from "react-paginate";
-import next from './next.svg';
-import previous from './previous.svg';
+import nextActive from './next_active.svg';
+import nextDisabled from './next_disabled.svg';
+import previousActive from './previous_active.svg';
+import previousDisabled from './previous_disabled.svg';
 import Message from "../Message/Message";
 import {messageTypes} from "../../util/messageTypes";
 import {ReposWrapper} from "./styles";
@@ -43,8 +45,8 @@ const UserRepos = ({userRepos, quantity, onPageChange, loading, page}) => {
                 </div>
                 <ReactPaginate
                     pageCount={pageCount}
-                    nextLabel={<img src={next} alt=""/>}
-                    previousLabel={<img src={previous} alt=""/>}
+                    previousLabel={<img src={+page === 1 ? previousDisabled : previousActive} alt=""/>}
+                    nextLabel={<img src={+page === +pageCount ? nextDisabled : nextActive} alt=""/>}
                     pageClassName='page-item'
                     nextClassName='page-item'
                     previousClassName='page-item'

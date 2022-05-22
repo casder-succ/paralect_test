@@ -4,11 +4,14 @@ import followingImg from './following.svg';
 import {UserWrapper} from "./styles";
 
 const UserInfo = ({userInfo}) => {
-    const {
+    let {
         avatar_url, name,
         html_url, login,
         followers, following
     } = userInfo;
+
+    followers = followers >= 1000 ? (followers / 1000).toFixed(1) + 'k' : followers;
+    following = following >= 1000 ? (following / 1000).toFixed(1) + 'k' : following;
 
     return (
         <UserWrapper>

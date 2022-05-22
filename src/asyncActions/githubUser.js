@@ -3,7 +3,7 @@ import {
     userFetchStarted,
     userFetchSuccess
 } from "../actions/userFetch";
-import {constants} from "../util/constants";
+import {urls} from "../util/urls";
 import {reposFetchFailed, reposFetchStarted, reposFetchSuccess, reposSetPage} from "../actions/repos";
 
 export const fetchGithubUser = (user) => (
@@ -11,7 +11,7 @@ export const fetchGithubUser = (user) => (
         dispatch(userFetchStarted());
 
         try {
-            const userResponse = await fetch(constants.userUrl(user));
+            const userResponse = await fetch(urls.userUrl(user));
 
             if (userResponse.ok) {
                 const userJson = await userResponse.json();
@@ -34,7 +34,7 @@ export const fetchUserRepos = (user, page) => (
         }
 
         try {
-            const reposResponse = await fetch(constants.reposUrl(user, page));
+            const reposResponse = await fetch(urls.reposUrl(user, page));
 
             if (reposResponse.ok) {
                 const reposJson = await reposResponse.json();
