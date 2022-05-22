@@ -8,13 +8,26 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-  
+
   body {
     font-family: Inter, sans-serif,
     sans-serif;
     font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    background-color: #E5E5E5;
+  }
+
+  a {
+    text-decoration: none;
+    color: #0064EB;
+  }
+
+  a:hover {
+    color: #4083e1;
   }
 `;
 
