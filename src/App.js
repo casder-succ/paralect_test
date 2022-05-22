@@ -10,6 +10,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    height: 100vh;
+    
     font-family: Inter, sans-serif,
     sans-serif;
     font-size: 16px;
@@ -19,6 +21,16 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
 
     background-color: #E5E5E5;
+  }
+  
+  main {
+    flex: 1 1 auto;
+  }
+  
+  #App {
+    display: flex;
+    flex-direction: column;
+    height: 100%  ;
   }
 
   a {
@@ -36,7 +48,9 @@ function App() {
         <>
             <GlobalStyle/>
             <Header/>
-            <UserProfile/>
+            <main>
+                <UserProfile/>
+            </main>
         </>
     );
 }
