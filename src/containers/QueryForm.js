@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {changeInput, resetInput} from "../actions/inputForm";
+import {changeInput} from "../actions/inputForm";
 import {fetchGithubUser} from "../asyncActions/githubUser";
 import styled from "styled-components";
 
@@ -45,7 +45,6 @@ const mapDispatchToProps = (dispatch) => ({
     },
     onKeyDown: (key, user) => {
         if (key === 'Enter') {
-            dispatch(resetInput());
             dispatch(fetchGithubUser(user));
         }
     }

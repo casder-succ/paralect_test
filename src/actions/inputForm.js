@@ -1,4 +1,4 @@
-import {QUERY_CHANGE, QUERY_RESET} from "./types";
+import {QUERY_CHANGE} from "./types";
 
 export const changeInput = (newValue) => ({
     type: QUERY_CHANGE,
@@ -7,6 +7,3 @@ export const changeInput = (newValue) => ({
     }
 });
 
-export const resetInput = () => ({
-    type: QUERY_RESET,
-});
