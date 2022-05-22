@@ -17,7 +17,7 @@ const UserInfo = ({userInfo}) => {
             </div>
             <h2 className="title">{name}</h2>
             <div className="user-link">
-                <a href={html_url}>{login}</a>
+                <a href={html_url} target="_blank" rel="noreferrer">{login}</a>
             </div>
             <div className="subscriptions">
                 <div>
