@@ -1,0 +1,6 @@
+export const messageTypes = {
+    USER_NOT_FOUND: 'USER_NOT_FOUND',
+    START_SEARCH: 'START_SEARCH',
+    LOADING: 'LOADING',
+    EMPTY_REPOS: 'EMPTY_REPOS',
+};
