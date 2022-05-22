@@ -2,7 +2,6 @@ import {USER_FETCH_FAIL, USER_FETCH_START, USER_FETCH_SUCCESS} from "../actions/
 
 const initialState = {
     userInfo: {},
-    userRepos: [],
     loading: false,
     error: false,
 };
@@ -21,7 +20,6 @@ export const userFetchReducer = (state = initialState, action) => {
                 loading: false,
                 error: false,
                 userInfo: action.payload.info,
-                userRepos: action.payload.repos,
             };
         case USER_FETCH_FAIL:
             return {
